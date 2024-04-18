@@ -17,7 +17,6 @@ const MyText = (props: MyTextProps) => {
       label={props.label}
       value={props.value}
       onChange={props.onChange}
-      sx={{ height: "50px"}}
     />
   );
 };

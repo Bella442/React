@@ -7,7 +7,7 @@ const Table2Page = () => {
   const navigate = useNavigate();
   const tableData = useAppSelector((state) => state.table.tableData);
   return (
-    <Grid container flexDirection="column" spacing={2} height="100%">
+    <Grid container flexDirection="column" spacing={2}>
       <Grid item>
         <Grid item>
           <div style={{ fontSize: "22px", fontWeight: "bold" }}>

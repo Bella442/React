@@ -69,7 +69,6 @@ const Table1Page = () => {
                 Search
               </Button>
             </Grid>
-
             <Grid item marginLeft="auto">
               <Button
                 style={{
