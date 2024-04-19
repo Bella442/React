@@ -23,9 +23,15 @@ const MyTable = (props: TableProps) => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>University Name</TableCell>
-                <TableCell align="center">Web Pages</TableCell>
-                <TableCell align="right">Country</TableCell>
+                <TableCell style={{ fontWeight: "bold" }}>
+                  University Name
+                </TableCell>
+                <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  Web Pages
+                </TableCell>
+                <TableCell align="right" style={{ fontWeight: "bold" }}>
+                  Country
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
