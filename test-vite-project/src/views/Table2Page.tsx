@@ -22,7 +22,6 @@ const Table2Page = () => {
               style={{
                 backgroundColor: "antiquewhite",
                 color: "brown",
-                fontFamily: "cursive",
                 textTransform: "none",
                 fontSize: "16px",
                 fontWeight: "semibold",

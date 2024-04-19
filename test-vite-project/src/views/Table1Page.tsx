@@ -29,7 +29,7 @@ const Table1Page = () => {
   return (
     <Grid container flexDirection="column" spacing={2}>
       <Grid item>
-        <div style={{ fontSize: "22px", fontWeight: "bold" }}>Table 1 page</div>
+        <div style={{ fontSize: "22px", fontWeight: "bold" }}>Table of Universities</div>
       </Grid>
       <Grid item marginTop={3}>
         <form
@@ -59,7 +59,6 @@ const Table1Page = () => {
                 style={{
                   backgroundColor: "antiquewhite",
                   color: "brown",
-                  fontFamily: "cursive",
                   textTransform: "none",
                   fontSize: "16px",
                   fontWeight: "semibold",
@@ -74,7 +73,6 @@ const Table1Page = () => {
                 style={{
                   backgroundColor: "antiquewhite",
                   color: "brown",
-                  fontFamily: "cursive",
                   textTransform: "none",
                   fontSize: "16px",
                   fontWeight: "semibold",

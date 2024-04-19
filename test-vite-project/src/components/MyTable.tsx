@@ -29,26 +29,34 @@ const MyTable = (props: TableProps) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.data.map((row: UniversityData, index: number) => (
-                <TableRow
-                  key={`${row.name}-${index}`}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.name}
+              {props.data.length ? (
+                props.data.map((row: UniversityData, index: number) => (
+                  <TableRow
+                    key={`${row.name}-${index}`}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="center">
+                      <Link
+                        href={`${row.web_pages[0]}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {row.web_pages[0]}
+                      </Link>
+                    </TableCell>
+                    <TableCell align="right">{row.country}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={8} align="center">
+                    No Records to display
                   </TableCell>
-                  <TableCell align="center">
-                    <Link
-                      href={`${row.web_pages[0]}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {row.web_pages[0]}
-                    </Link>
-                  </TableCell>
-                  <TableCell align="right">{row.country}</TableCell>
                 </TableRow>
-              ))}
+              )}
             </TableBody>
           </Table>
         </TableContainer>
