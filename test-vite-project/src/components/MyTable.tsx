@@ -24,7 +24,7 @@ const MyTable = (props: TableProps) => {
   const [rowsPerPage, setRowsPerPage] = useState(25);
 
   const handleChangePage = (
-    event: BaseSyntheticEvent | null,
+    _event: BaseSyntheticEvent | null,
     newPage: number
   ) => {
     setPage(newPage);

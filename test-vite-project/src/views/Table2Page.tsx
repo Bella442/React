@@ -4,7 +4,7 @@ import MyTable from "../components/MyTable";
 import { useAppSelector } from "../store/hooks/hooks";
 import { useGetUniversityDataByCountryQuery } from "../api/api";
 import { UniversityData } from "../apiModels/universityData";
-import { MyButton } from "../components/MyButton";
+import MyButton from "../components/MyButton";
 
 const Table2Page = () => {
   const navigate = useNavigate();
@@ -24,12 +24,11 @@ const Table2Page = () => {
         <Grid container spacing={2} display="flex" alignItems="center">
           <Grid item marginLeft="auto">
             <MyButton
+              text="Go back to table 1"
               onClick={() => {
                 navigate("/");
               }}
-            >
-              Go back to table 1
-            </MyButton>
+            />
           </Grid>
         </Grid>
       </Grid>

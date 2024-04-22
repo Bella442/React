@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { useGetUniversityDataByCountryQuery } from "../api/api";
 import MyText from "../components/TextField";
 import { UniversityData } from "../apiModels/universityData";
-import { MyButton } from "../components/MyButton";
+import MyButton from "../components/MyButton";
 
 const Table1Page = () => {
   const navigate = useNavigate();
@@ -49,17 +49,19 @@ const Table1Page = () => {
               />
             </Grid>
             <Grid item>
-              <MyButton type="submit">Search</MyButton>
+            <MyButton
+              type="submit"
+              text="Search"
+            />
             </Grid>
             <Grid item marginLeft="auto">
               <MyButton
                 type="button"
+                text="Go to table 2"
                 onClick={() => {
                   navigate("/second_table");
                 }}
-              >
-                Go to table 2
-              </MyButton>
+              />
             </Grid>
           </Grid>
         </form>
