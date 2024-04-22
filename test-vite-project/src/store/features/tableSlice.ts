@@ -1,13 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { UniversityData } from "../../apiModels/universityData";
 
 export interface TableState {
-  tableData: Array<UniversityData>;
   country: string;
 }
 
 const initialState: TableState = {
-  tableData: [],
   country: ""
 };
 
