@@ -5,7 +5,7 @@ export interface TableState {
 }
 
 const initialState: TableState = {
-  country: ""
+  country: "Bulgaria"
 };
 
 const tableSlice = createSlice({

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { BaseSyntheticEvent, useState } from "react";
 import { Box, CircularProgress, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MyTable from "../components/MyTable";
@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { useGetUniversityDataByCountryQuery } from "../api/api";
 import MyText from "../components/TextField";
 import { UniversityData } from "../apiModels/universityData";
-import MyButton from "../components/MyButton";
+import { MyButton } from "../components/MyButton";
 
 const Table1Page = () => {
   const navigate = useNavigate();
@@ -17,6 +17,11 @@ const Table1Page = () => {
   const { data, isLoading } = useGetUniversityDataByCountryQuery(country, {
     skip,
   });
+
+  const submitForm = (e: BaseSyntheticEvent) => {
+    e.preventDefault();
+    setSkip(false);
+  };
 
   return (
     <Grid container flexDirection="column" spacing={2}>
@@ -28,12 +33,7 @@ const Table1Page = () => {
       <Grid item marginTop={3}>
         <form
           style={{ display: "flex" }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              setSkip(false);
-            }
-          }}
+          onSubmit={(e) => submitForm(e)}
         >
           <Grid container spacing={2} display="flex" alignItems="center">
             <Grid item>
@@ -49,15 +49,17 @@ const Table1Page = () => {
               />
             </Grid>
             <Grid item>
-              <MyButton text="Search" onClick={() => setSkip(false)} />
+              <MyButton type="submit">Search</MyButton>
             </Grid>
             <Grid item marginLeft="auto">
               <MyButton
-                text="Go to table 2"
+                type="button"
                 onClick={() => {
                   navigate("/second_table");
                 }}
-              />
+              >
+                Go to table 2
+              </MyButton>
             </Grid>
           </Grid>
         </form>
