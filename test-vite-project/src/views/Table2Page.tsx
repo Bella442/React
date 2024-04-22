@@ -2,10 +2,14 @@ import { Button, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MyTable from "../components/MyTable";
 import { useAppSelector } from "../store/hooks/hooks";
+import { useGetUniversityDataByCountryQuery } from "../api/api";
+import { UniversityData } from "../apiModels/universityData";
 
 const Table2Page = () => {
   const navigate = useNavigate();
-  const tableData = useAppSelector((state) => state.table.tableData);
+  const country = useAppSelector((state) => state.table.country);
+  const { data } = useGetUniversityDataByCountryQuery(country);
+
   return (
     <Grid container flexDirection="column" spacing={2}>
       <Grid item>
@@ -36,7 +40,7 @@ const Table2Page = () => {
         </Grid>
       </Grid>
       <Grid item>
-        <MyTable data={tableData} />
+        <MyTable data={data as Array<UniversityData>} />
       </Grid>
     </Grid>
   );

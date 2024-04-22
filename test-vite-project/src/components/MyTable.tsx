@@ -35,7 +35,7 @@ const MyTable = (props: TableProps) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.data.length ? (
+              {props.data?.length ? (
                 props.data.map((row: UniversityData, index: number) => (
                   <TableRow
                     key={`${row.name}-${index}`}

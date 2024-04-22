@@ -3,22 +3,24 @@ import { UniversityData } from "../../apiModels/universityData";
 
 export interface TableState {
   tableData: Array<UniversityData>;
+  country: string;
 }
 
 const initialState: TableState = {
   tableData: [],
+  country: ""
 };
 
 const tableSlice = createSlice({
   name: "table",
   initialState,
   reducers: {
-    updateData: (state, action: PayloadAction<Array<UniversityData>>) => {
-      return { ...state, tableData: [...action.payload] };
+    updateCountry: (state, action: PayloadAction<string>) => {
+      return { ...state, country: action.payload };
     },
   },
 });
 
-export const { updateData } = tableSlice.actions;
+export const { updateCountry } = tableSlice.actions;
 
 export default tableSlice.reducer;

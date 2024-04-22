@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Button, CircularProgress, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MyTable from "../components/MyTable";
-import { updateData } from "../store/features/tableSlice";
+import { updateCountry } from "../store/features/tableSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { useGetUniversityDataByCountryQuery } from "../api/api";
 import MyText from "../components/TextField";
@@ -10,21 +10,12 @@ import { UniversityData } from "../apiModels/universityData";
 
 const Table1Page = () => {
   const navigate = useNavigate();
-  const tableData: Array<UniversityData> = useAppSelector(
-    (state) => state.table.tableData
-  );
   const dispatch = useAppDispatch();
-  const [country, setCountry] = useState("");
-  const [skip, setSkip] = useState(true);
+const country = useAppSelector((state) => state.table.country)
+  const [skip, setSkip] = useState(false);
   const { data, isLoading } = useGetUniversityDataByCountryQuery(country, {
     skip,
   });
-
-  useEffect(() => {
-    if (data) {
-      dispatch(updateData(data));
-    }
-  }, [data, dispatch]);
 
   return (
     <Grid container flexDirection="column" spacing={2}>
@@ -50,7 +41,7 @@ const Table1Page = () => {
                 label="Country"
                 onChange={(e) => {
                   setSkip(true);
-                  setCountry(e.target.value);
+                  dispatch(updateCountry(e.target.value));
                 }}
               />
             </Grid>
@@ -93,7 +84,7 @@ const Table1Page = () => {
         </Box>
       ) : (
         <Grid item>
-          <MyTable data={tableData} />
+          <MyTable data={data as Array<UniversityData>} />
         </Grid>
       )}
     </Grid>
