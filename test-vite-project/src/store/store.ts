@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import tableReducer from "./features/tableSlice"
-import { api } from '../api/api'
 import { setupListeners } from '@reduxjs/toolkit/query';
+import { api } from '@api/api';
+import tableReducer from "@store/features/tableSlice"
+
 
 
 export const store = configureStore({

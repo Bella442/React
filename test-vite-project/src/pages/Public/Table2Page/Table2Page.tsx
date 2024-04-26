@@ -1,10 +1,11 @@
-import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import MyTable from "../components/MyTable";
-import { useAppSelector } from "../store/hooks/hooks";
-import { useGetUniversityDataByCountryQuery } from "../api/api";
-import { UniversityData } from "../apiModels/universityData";
-import MyButton from "../components/MyButton";
+import { Divider, Grid } from "@mui/material";
+import { useAppSelector } from "@store/hooks/hooks";
+import { useGetUniversityDataByCountryQuery } from "@api/api";
+import { UniversityData } from "@apiModels/universityData";
+import MyButton from "@components/Button/MyButton";
+import MyTable from "@components/Table/MyTable";
+
 
 const Table2Page = () => {
   const navigate = useNavigate();
@@ -31,6 +32,9 @@ const Table2Page = () => {
             />
           </Grid>
         </Grid>
+      </Grid>
+      <Grid item>
+        <Divider />
       </Grid>
       <Grid item>
         <MyTable data={data as Array<UniversityData>} />

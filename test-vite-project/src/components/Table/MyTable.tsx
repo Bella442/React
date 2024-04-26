@@ -10,8 +10,8 @@ import {
   TablePagination,
   TableRow,
 } from "@mui/material";
-import { UniversityData } from "../apiModels/universityData";
 import { BaseSyntheticEvent, useState } from "react";
+import { UniversityData } from "@apiModels/universityData";
 
 interface TableProps {
   data: Array<UniversityData>;

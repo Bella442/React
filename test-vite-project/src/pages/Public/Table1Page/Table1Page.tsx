@@ -1,13 +1,13 @@
 import { BaseSyntheticEvent, useState } from "react";
-import { Box, CircularProgress, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import MyTable from "../components/MyTable";
-import { updateCountry } from "../store/features/tableSlice";
-import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
-import { useGetUniversityDataByCountryQuery } from "../api/api";
-import MyText from "../components/TextField";
-import { UniversityData } from "../apiModels/universityData";
-import MyButton from "../components/MyButton";
+import { Box, CircularProgress, Divider, Grid } from "@mui/material";
+import { useAppDispatch, useAppSelector } from "@store/hooks/hooks";
+import { updateCountry } from "@store/features/tableSlice";
+import { useGetUniversityDataByCountryQuery } from "@api/api";
+import { UniversityData } from "@apiModels/universityData";
+import MyText from "@components/Input/TextField";
+import MyButton from "@components/Button/MyButton";
+import MyTable from "@components/Table/MyTable";
 
 const Table1Page = () => {
   const navigate = useNavigate();
@@ -31,10 +31,7 @@ const Table1Page = () => {
         </div>
       </Grid>
       <Grid item marginTop={3}>
-        <form
-          style={{ display: "flex" }}
-          onSubmit={(e) => submitForm(e)}
-        >
+        <form style={{ display: "flex" }} onSubmit={(e) => submitForm(e)}>
           <Grid container spacing={2} display="flex" alignItems="center">
             <Grid item>
               <MyText
@@ -49,10 +46,7 @@ const Table1Page = () => {
               />
             </Grid>
             <Grid item>
-            <MyButton
-              type="submit"
-              text="Search"
-            />
+              <MyButton type="submit" text="Search" />
             </Grid>
             <Grid item marginLeft="auto">
               <MyButton
@@ -66,8 +60,11 @@ const Table1Page = () => {
           </Grid>
         </form>
       </Grid>
+      <Grid item>
+        <Divider />
+      </Grid>
       {isLoading ? (
-        <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" marginTop="16px">
           <CircularProgress />
         </Box>
       ) : (
