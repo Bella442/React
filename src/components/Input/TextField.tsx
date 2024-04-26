@@ -12,9 +12,9 @@ interface MyTextProps {
 const MyText = (props: MyTextProps) => {
   return (
     <TextField
+      label={props.label}
       placeholder={props.placeholder}
       type={props.type}
-      label={props.label}
       value={props.value}
       onChange={props.onChange}
     />

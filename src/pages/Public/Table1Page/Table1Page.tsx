@@ -32,13 +32,13 @@ const Table1Page = () => {
       </Grid>
       <Grid item marginTop={3}>
         <form style={{ display: "flex" }} onSubmit={(e) => submitForm(e)}>
-          <Grid container spacing={2} display="flex" alignItems="center">
+          <Grid container alignItems="center" display="flex" spacing={2}>
             <Grid item>
               <MyText
-                type="text"
-                placeholder="Please enter a country"
-                value={country}
                 label="Country"
+                placeholder="Please enter a country"
+                type="text"
+                value={country}
                 onChange={(e) => {
                   setSkip(true);
                   dispatch(updateCountry(e.target.value));
@@ -46,12 +46,12 @@ const Table1Page = () => {
               />
             </Grid>
             <Grid item>
-              <MyButton type="submit" text="Search" />
+              <MyButton text="Search" type="submit" />
             </Grid>
             <Grid item marginLeft="auto">
               <MyButton
-                type="button"
                 text="Go to table 2"
+                type="button"
                 onClick={() => {
                   navigate("/second_table");
                 }}

@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter basename="/">
       <Routes>
-        <Route path="/" element={<Table1Page />} />
-        <Route path="/second_table" element={<Table2Page />} />
+        <Route element={<Table1Page />} path="/" />
+        <Route element={<Table2Page />} path="/second_table" />
       </Routes>
     </BrowserRouter>
   )

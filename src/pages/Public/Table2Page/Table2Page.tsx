@@ -22,7 +22,7 @@ const Table2Page = () => {
         </Grid>
       </Grid>
       <Grid item marginTop={3}>
-        <Grid container spacing={2} display="flex" alignItems="center">
+        <Grid container alignItems="center" display="flex" spacing={2}>
           <Grid item marginLeft="auto">
             <MyButton
               text="Go back to table 1"

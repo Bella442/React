@@ -68,8 +68,8 @@ const MyTable = (props: TableProps) => {
                       <TableCell align="center">
                         <Link
                           href={`${row.web_pages[0]}`}
-                          target="_blank"
                           rel="noreferrer"
+                          target="_blank"
                         >
                           {row.web_pages[0]}
                         </Link>
@@ -79,7 +79,7 @@ const MyTable = (props: TableProps) => {
                   ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={8} align="center">
+                  <TableCell align="center" colSpan={8}>
                     No Records to display
                   </TableCell>
                 </TableRow>
@@ -88,11 +88,11 @@ const MyTable = (props: TableProps) => {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[25, 50, 100]}
           component="div"
           count={rows?.length || 0}
-          rowsPerPage={rowsPerPage}
           page={page}
+          rowsPerPage={rowsPerPage}
+          rowsPerPageOptions={[25, 50, 100]}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
