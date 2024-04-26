@@ -30,10 +30,14 @@ It's interacting with an API, which configuration details can be found in `.env.
  `yarn dev`
 
  Runs the app in development mode.
+
  You can now open <http://localhost:5173/> to view it in the browser.
 
  `yarn build`
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### Future Improvements
+1. Add Husky
 
