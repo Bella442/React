@@ -25,3 +25,5 @@ dist-ssr
 
 # Еnvironment variables file
 .env.development
+
+yarn.lock
