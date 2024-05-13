@@ -2,17 +2,17 @@ import { useNavigate } from "react-router-dom";
 
 import { Divider, Grid } from "@mui/material";
 
-import { useGetUniversityDataByCountryQuery } from "@api/api";
-import { UniversityData } from "@apiModels/universityData";
+import { useGetUniversityDataByCountryQuery } from "@api/shared/universityApi";
 import MyButton from "@components/Button/MyButton";
 import MyTable from "@components/Table/MyTable";
+import { UniversityData } from "@sharedTypes/universityData";
 import { useAppSelector } from "@store/hooks/hooks";
 import { RootState } from "@store/store";
 
 
 const Table2Page = () => {
   const navigate = useNavigate();
-  const country = useAppSelector((state: RootState) => state.table.country);
+  const country = useAppSelector((state: RootState) => state.table1Page.country);
   const { data } = useGetUniversityDataByCountryQuery(country);
 
   return (

@@ -13,7 +13,7 @@ import {
   TableRow,
 } from "@mui/material";
 
-import { UniversityData } from "@apiModels/universityData";
+import { UniversityData } from "@sharedTypes/universityData";
 
 interface TableProps {
   data: Array<UniversityData>;

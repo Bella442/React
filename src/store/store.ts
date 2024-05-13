@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { api } from '@api/api';
-import tableReducer from "@store/features/tableSlice"
+import table1PageReducer from "@pages/Public/Table1Page/table1PageSlice"
 
 
 
 export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
-    table: tableReducer,
+    table1Page: table1PageReducer,
   },
   middleware: (getDefaultMiddleware) =>
   getDefaultMiddleware().concat(api.middleware),

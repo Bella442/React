@@ -1,15 +1,15 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-export interface TableState {
+export interface PageState {
   country: string;
 }
 
-const initialState: TableState = {
+const initialState: PageState = {
   country: "Bulgaria"
 };
 
-const tableSlice = createSlice({
-  name: "table",
+const table1PageSlice = createSlice({
+  name: "table1Page",
   initialState,
   reducers: {
     updateCountry: (state, action: PayloadAction<string>) => {
@@ -18,6 +18,6 @@ const tableSlice = createSlice({
   },
 });
 
-export const { updateCountry } = tableSlice.actions;
+export const { updateCountry } = table1PageSlice.actions;
 
-export default tableSlice.reducer;
+export default table1PageSlice.reducer;

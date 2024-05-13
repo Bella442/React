@@ -4,19 +4,19 @@ import { useNavigate } from "react-router-dom";
 
 import { Box, CircularProgress, Divider, Grid } from "@mui/material";
 
-import { useGetUniversityDataByCountryQuery } from "@api/api";
-import { UniversityData } from "@apiModels/universityData";
+import { useGetUniversityDataByCountryQuery } from "@api/shared/universityApi";
 import MyButton from "@components/Button/MyButton";
 import MyText from "@components/Input/TextField";
 import MyTable from "@components/Table/MyTable";
 import { ROUTES } from "@constants/routes";
-import { updateCountry } from "@store/features/tableSlice";
+import { updateCountry } from "@pages/Public/Table1Page/table1PageSlice";
+import { UniversityData } from "@sharedTypes/universityData";
 import { useAppDispatch, useAppSelector } from "@store/hooks/hooks";
 
 const Table1Page = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const country = useAppSelector((state) => state.table.country);
+  const country = useAppSelector((state) => state.table1Page.country);
   const [skip, setSkip] = useState(false);
   const { data, isLoading } = useGetUniversityDataByCountryQuery(country, {
     skip,

@@ -8,12 +8,13 @@
     "baseUrl" : "./src",
     "paths": {
       "@*": ["./*"],
+      "@api/*": ["./api/*"],
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
       "@constants/*": ["./constants/*"],
       "@pages/*": ["./pages/*"],
       "@store/*": ["./store/*"],
-      "@api/*": ["./api/*"],
+      "@sharedTypes/*": ["./sharedTypes/*"],
       "@utils/*": ["./utils/*"], 
     },
 

@@ -1,15 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { UniversityData } from "@apiModels/universityData";
-
-
 export const api = createApi({
+  reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_URL }),
-  endpoints: (build) => ({
-    getUniversityDataByCountry: build.query<Array<UniversityData>, string>({
-      query: (name) => `/search?country=${name}`,
-    }),
-  }),
+  endpoints: () => ({}),
 });
 
-export const { useGetUniversityDataByCountryQuery } = api;
+export default api;
