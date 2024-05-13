@@ -10,6 +10,7 @@
       "@*": ["./*"],
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
+      "@constants/*": ["./constants/*"],
       "@pages/*": ["./pages/*"],
       "@store/*": ["./store/*"],
       "@api/*": ["./api/*"],
