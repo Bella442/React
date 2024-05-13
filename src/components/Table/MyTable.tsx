@@ -1,3 +1,5 @@
+import { BaseSyntheticEvent, useState } from "react";
+
 import {
   Grid,
   Link,
@@ -10,7 +12,7 @@ import {
   TablePagination,
   TableRow,
 } from "@mui/material";
-import { BaseSyntheticEvent, useState } from "react";
+
 import { UniversityData } from "@apiModels/universityData";
 
 interface TableProps {

@@ -1,13 +1,16 @@
 import { BaseSyntheticEvent, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
+
 import { Box, CircularProgress, Divider, Grid } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "@store/hooks/hooks";
-import { updateCountry } from "@store/features/tableSlice";
+
 import { useGetUniversityDataByCountryQuery } from "@api/api";
 import { UniversityData } from "@apiModels/universityData";
-import MyText from "@components/Input/TextField";
 import MyButton from "@components/Button/MyButton";
+import MyText from "@components/Input/TextField";
 import MyTable from "@components/Table/MyTable";
+import { updateCountry } from "@store/features/tableSlice";
+import { useAppDispatch, useAppSelector } from "@store/hooks/hooks";
 
 const Table1Page = () => {
   const navigate = useNavigate();

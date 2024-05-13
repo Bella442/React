@@ -1,16 +1,18 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
+  plugins: ['react-refresh'],
   env: {
-    es6: true,
     browser: true,
     node: true,
+    es2020: true
   },
   parserOptions: {
     ecmaVersion: 6,
@@ -41,10 +43,17 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/group-exports': 'off',
     'import/no-named-as-default': 'off',
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     'import/order': [
       'warn',
       {
         pathGroups: [
+          {
+            pattern: "react**",
+            group: "external",
+            position: 'before',
+          },
           {
             pattern: '@mui/**',
             group: 'external',
@@ -57,13 +66,16 @@ module.exports = {
           },
         ],
         'newlines-between': 'always-and-inside-groups',
-        pathGroupsExcludedImportTypes: ['external'],
+        pathGroupsExcludedImportTypes: ["react"],
+        "alphabetize": { 
+          "order": "asc", 
+       },
         groups: [
+          'builtin',
           'external',
           'unknown',
           'internal',
           ['sibling', 'parent'],
-          'builtin',
           'index',
           'object',
           'type',
@@ -137,5 +149,9 @@ module.exports = {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
+    "import/resolver": {
+      typescript: true,
+      node: true
+    }
   },
 };
