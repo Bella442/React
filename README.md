@@ -17,6 +17,11 @@ It's interacting with an API, which configuration details can be found in `.env.
 - RTK Query
 - React Router
 
+### Project Architecture
+All files (slices, API, types, etc.) should be in the folder of the particular page using them. 
+
+If used in more than one place it should be in the shared folders.
+
 ### Setup
 1. Clone the repository
 2. Run `yarn`/`yarn install` to instal dependencies.
@@ -39,11 +44,6 @@ It's interacting with an API, which configuration details can be found in `.env.
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### Project Architecture
-All files (slices, API, types, etc.) should be in the folder of the particular page using them. 
-
-If used in more than one place it should be in the shared folders.
 
 ### Import Aliases
 When adding new folder to the project, the alias should be configured in tsconfig.json and vite.config.ts files.
