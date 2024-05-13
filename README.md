@@ -24,9 +24,9 @@ It's interacting with an API, which configuration details can be found in `.env.
 
    VITE_API_URL=http://universities.hipolabs.com
 
-   **Note**: Do not commit values to `.env.example` file
-
-   **Note**: All environment variables should be prefixed with `VITE_`
+   **Note**: Do not commit values to `.env.example` file.
+   
+    All environment variables should be prefixed with `VITE_`
 
 ### Running the application
  `yarn dev`
