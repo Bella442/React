@@ -9,6 +9,7 @@ import { UniversityData } from "@apiModels/universityData";
 import MyButton from "@components/Button/MyButton";
 import MyText from "@components/Input/TextField";
 import MyTable from "@components/Table/MyTable";
+import { ROUTES } from "@constants/routes";
 import { updateCountry } from "@store/features/tableSlice";
 import { useAppDispatch, useAppSelector } from "@store/hooks/hooks";
 
@@ -56,7 +57,7 @@ const Table1Page = () => {
                 text="Go to table 2"
                 type="button"
                 onClick={() => {
-                  navigate("/second_table");
+                  navigate(ROUTES.SECOND_TABLE_PAGE);
                 }}
               />
             </Grid>
