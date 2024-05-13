@@ -4,7 +4,7 @@
 ### Overview
 This project is a React-based web application. It provides a template for starting new React projects with pre-configured settings,
 including routing, state management, and styling.
-It's interacting with an API, which configuration details can be found in `.env.development` file. 
+It's interacting with an API, which configuration details can be found in `.env.example` file. 
 
 ### Technologies used
 - React
@@ -20,7 +20,7 @@ It's interacting with an API, which configuration details can be found in `.env.
 ### Setup
 1. Clone the repository
 2. Run `yarn`/`yarn install` to instal dependencies.
-3. Add the following link to `.env.development` file: 
+3. Add the following link to `.env.example` file and rename it to `.env.development`: 
 
    VITE_API_URL=http://universities.hipolabs.com
 
