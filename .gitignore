@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Еnvironment variables file
-.env/*
+.env.development
