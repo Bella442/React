@@ -22,8 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+yarn.lock
 
 # Еnvironment variables file
 .env.development
 
-yarn.lock
+
