@@ -1,5 +1,5 @@
 
-# Sciant React Template App
+# React Template App
 
 ### Overview
 This project is a React-based web application. It provides a template for starting new React projects with pre-configured settings,
@@ -47,7 +47,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Import Aliases
 When adding new folder to the project, the alias should be configured in tsconfig.json and vite.config.ts files.
-
-### Future Improvements
-1. Add Husky
-
